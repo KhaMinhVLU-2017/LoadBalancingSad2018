@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SAD2018ModelStoreContainer" CdmEntityContainer="SAD2018Entities">
+    <EntitySetMapping Name="chucvus">
+      <EntityTypeMapping TypeName="SAD2018Model.chucvu">
+        <MappingFragment StoreEntitySet="chucvu">
+          <ScalarProperty Name="cvu_id" ColumnName="cvu_id" />
+          <ScalarProperty Name="cvu_ten" ColumnName="cvu_ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="SAD2018Model.contact">
+        <MappingFragment StoreEntitySet="contact">
+          <ScalarProperty Name="ct_ten" ColumnName="ct_ten" />
+          <ScalarProperty Name="ct_diachi" ColumnName="ct_diachi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hopdonglaodongs">
+      <EntityTypeMapping TypeName="SAD2018Model.hopdonglaodong">
+        <MappingFragment StoreEntitySet="hopdonglaodong">
+          <ScalarProperty Name="hdld_id" ColumnName="hdld_id" />
+          <ScalarProperty Name="nv_id" ColumnName="nv_id" />
+          <ScalarProperty Name="hdld_loai" ColumnName="hdld_loai" />
+          <ScalarProperty Name="hdld_ngaybatdau" ColumnName="hdld_ngaybatdau" />
+          <ScalarProperty Name="hdld_ngayketthuc" ColumnName="hdld_ngayketthuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loais">
+      <EntityTypeMapping TypeName="SAD2018Model.loai">
+        <MappingFragment StoreEntitySet="loai">
+          <ScalarProperty Name="loai_id" ColumnName="loai_id" />
+          <ScalarProperty Name="loai_ten" ColumnName="loai_ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="luongs">
+      <EntityTypeMapping TypeName="SAD2018Model.luong">
+        <MappingFragment StoreEntitySet="luong">
+          <ScalarProperty Name="lg_bacluong" ColumnName="lg_bacluong" />
+          <ScalarProperty Name="lg_luongcoban" ColumnName="lg_luongcoban" />
+          <ScalarProperty Name="lg_hesoluong" ColumnName="lg_hesoluong" />
+          <ScalarProperty Name="lg_hesophucap" ColumnName="lg_hesophucap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhanviens">
+      <EntityTypeMapping TypeName="SAD2018Model.nhanvien">
+        <MappingFragment StoreEntitySet="nhanvien">
+          <ScalarProperty Name="nv_email" ColumnName="nv_email" />
+          <ScalarProperty Name="nv_id" ColumnName="nv_id" />
+          <ScalarProperty Name="nv_ten" ColumnName="nv_ten" />
+          <ScalarProperty Name="nv_ngaysinh" ColumnName="nv_ngaysinh" />
+          <ScalarProperty Name="nv_diachi" ColumnName="nv_diachi" />
+          <ScalarProperty Name="nv_sdt" ColumnName="nv_sdt" />
+          <ScalarProperty Name="nv_gioitinh" ColumnName="nv_gioitinh" />
+          <ScalarProperty Name="pb_id" ColumnName="pb_id" />
+          <ScalarProperty Name="cvu_id" ColumnName="cvu_id" />
+          <ScalarProperty Name="tdhv_id" ColumnName="tdhv_id" />
+          <ScalarProperty Name="lg_bacluong" ColumnName="lg_bacluong" />
+          <ScalarProperty Name="nv_tinhtrang" ColumnName="nv_tinhtrang" />
+          <ScalarProperty Name="tt_id" ColumnName="tt_id" />
+          <ScalarProperty Name="loai" ColumnName="loai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phieutuyendungs">
+      <EntityTypeMapping TypeName="SAD2018Model.phieutuyendung">
+        <MappingFragment StoreEntitySet="phieutuyendung">
+          <ScalarProperty Name="ptd_id" ColumnName="ptd_id" />
+          <ScalarProperty Name="ptd_ten" ColumnName="ptd_ten" />
+          <ScalarProperty Name="ptd_ngaysinh" ColumnName="ptd_ngaysinh" />
+          <ScalarProperty Name="ptd_sdt" ColumnName="ptd_sdt" />
+          <ScalarProperty Name="ptd_gioitinh" ColumnName="ptd_gioitinh" />
+          <ScalarProperty Name="ptd_chucvu" ColumnName="ptd_chucvu" />
+          <ScalarProperty Name="ptd_email" ColumnName="ptd_email" />
+          <ScalarProperty Name="ttptd_id" ColumnName="ttptd_id" />
+          <ScalarProperty Name="ptd_ngaydangphieu" ColumnName="ptd_ngaydangphieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phongbans">
+      <EntityTypeMapping TypeName="SAD2018Model.phongban">
+        <MappingFragment StoreEntitySet="phongban">
+          <ScalarProperty Name="pb_id" ColumnName="pb_id" />
+          <ScalarProperty Name="pb_ten" ColumnName="pb_ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tinhtrangs">
+      <EntityTypeMapping TypeName="SAD2018Model.tinhtrang">
+        <MappingFragment StoreEntitySet="tinhtrang">
+          <ScalarProperty Name="tt_id" ColumnName="tt_id" />
+          <ScalarProperty Name="tt_ten" ColumnName="tt_ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tinhtrangdottuyendungs">
+      <EntityTypeMapping TypeName="SAD2018Model.tinhtrangdottuyendung">
+        <MappingFragment StoreEntitySet="tinhtrangdottuyendung">
+          <ScalarProperty Name="tttd_id" ColumnName="tttd_id" />
+          <ScalarProperty Name="tttd_ten" ColumnName="tttd_ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tinhtrangphieutuyendungs">
+      <EntityTypeMapping TypeName="SAD2018Model.tinhtrangphieutuyendung">
+        <MappingFragment StoreEntitySet="tinhtrangphieutuyendung">
+          <ScalarProperty Name="ttptd_id" ColumnName="ttptd_id" />
+          <ScalarProperty Name="ttptd_ten" ColumnName="ttptd_ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trinhdohocvans">
+      <EntityTypeMapping TypeName="SAD2018Model.trinhdohocvan">
+        <MappingFragment StoreEntitySet="trinhdohocvan">
+          <ScalarProperty Name="tdhv_id" ColumnName="tdhv_id" />
+          <ScalarProperty Name="tdhv_ten" ColumnName="tdhv_ten" />
+          <ScalarProperty Name="tdhv_chuyennganh" ColumnName="tdhv_chuyennganh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tuyendungs">
+      <EntityTypeMapping TypeName="SAD2018Model.tuyendung">
+        <MappingFragment StoreEntitySet="tuyendung">
+          <ScalarProperty Name="td_id" ColumnName="td_id" />
+          <ScalarProperty Name="td_ten" ColumnName="td_ten" />
+          <ScalarProperty Name="td_noidung" ColumnName="td_noidung" />
+          <ScalarProperty Name="td_ngaybatdau" ColumnName="td_ngaybatdau" />
+          <ScalarProperty Name="td_ngayketthuc" ColumnName="td_ngayketthuc" />
+          <ScalarProperty Name="tttd_id" ColumnName="tttd_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

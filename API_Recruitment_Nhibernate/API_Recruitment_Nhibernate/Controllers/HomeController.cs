@@ -10,9 +10,9 @@ namespace API_Recruitment_Nhibernate.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "API Recruitment Nhibernate";
 
             return View();
-        }
+        } 
     }
 }

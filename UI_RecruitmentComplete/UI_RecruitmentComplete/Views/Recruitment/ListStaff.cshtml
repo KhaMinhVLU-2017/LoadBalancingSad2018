@@ -11,7 +11,7 @@
     <div class="col-md-3">
         <select class="form-control" id="txt_url_staff">
             <option value="http://localhost:59323/api/nhanviens">EntityFrameWork</option>
-            <option value="url">Hibernate</option>
+            <option value="http://localhost:54745/api/nhanviens">Hibernate</option>
         </select>
     </div>
     <div class="col-md-1">
@@ -67,6 +67,13 @@
     //Get List Staff
     function getListStaff() {
         var url = txt_url_staff.options[txt_url_staff.selectedIndex].value;//url enity
+        let IndexPosOp = txt_url_staff.selectedIndex;//help Choose Hibernate || ENtity
+        let urlSub = "";
+        if (IndexPosOp == 0) {
+            urlSub = "http://localhost:54250/api/chucvus";// Entity
+        } else if (IndexPosOp == 1) {
+            urlSub = "http://localhost:65424/api/chucvus";//NhiberNate
+        }
         // Send an AJAX request
         var Cv_arr = {};
         /*delete node current
@@ -75,7 +82,7 @@
             t_body_staff.removeChild(t_body_staff.firstChild);
         }
         count = 0;
-        $.getJSON("http://localhost:54250/api/chucvus")
+        $.getJSON(urlSub)
             .done(function (data) {
 
                 $.each(data, function (key, item) {

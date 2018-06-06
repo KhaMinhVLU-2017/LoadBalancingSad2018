@@ -10,7 +10,7 @@ namespace API_Candidate_Nhibernate.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "API Candidate Nhibernate";
 
             return View();
         }

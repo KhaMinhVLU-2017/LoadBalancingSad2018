@@ -105,3 +105,6 @@ D:\Learning School\THe Thrid\HKII\Software Architecture Design\Finally\API_Recru
 D:\Learning School\THe Thrid\HKII\Software Architecture Design\Finally\API_Recruitment_Nhibernate\API_Recruitment_Nhibernate\obj\Debug\API_Recruitment_Nhibernate.csproj.CopyComplete
 D:\Learning School\THe Thrid\HKII\Software Architecture Design\Finally\API_Recruitment_Nhibernate\API_Recruitment_Nhibernate\obj\Debug\API_Recruitment_Nhibernate.dll
 D:\Learning School\THe Thrid\HKII\Software Architecture Design\Finally\API_Recruitment_Nhibernate\API_Recruitment_Nhibernate\obj\Debug\API_Recruitment_Nhibernate.pdb
+D:\Learning School\THe Thrid\HKII\Software Architecture Design\Finally\API_Recruitment_Nhibernate\API_Recruitment_Nhibernate\bin\System.Web.Cors.dll
+D:\Learning School\THe Thrid\HKII\Software Architecture Design\Finally\API_Recruitment_Nhibernate\API_Recruitment_Nhibernate\bin\System.Web.Http.Cors.dll
+D:\Learning School\THe Thrid\HKII\Software Architecture Design\Finally\API_Recruitment_Nhibernate\API_Recruitment_Nhibernate\bin\System.Web.Http.Cors.xml

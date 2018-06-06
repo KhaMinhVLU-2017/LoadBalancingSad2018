@@ -9,15 +9,15 @@
     <div class="col-md-3">
         <select class="form-control" id="txt_url">
             <option value="http://localhost:54250/api/phieutuyendungs">EntityFrameWork</option>
-            <option value="url">Hibernate</option>
+            <option value="http://localhost:65424/api/phieutuyendung">Hibernate</option>
         </select>
     </div>
     <div class="col-md-1">
         <button id="btn_send" class="btn btn-success">Connect</button>
     </div>
     @*<div class="col-md-1">
-        <button id="btn_clear" class="btn btn-success">Clear</button>
-    </div>*@
+            <button id="btn_clear" class="btn btn-success">Clear</button>
+        </div>*@
 </div>
 
 <div class="col-md-12">
@@ -124,11 +124,20 @@
 
                         $.each(data, function (key, item) {
                             // Add a list item http://localhost:54250/api/chucvus/for the product.
+                            console.log(item);
                             var gender;
                             if (item.ptd_gioitinh) {
                                 gender = "Nam";
                             } else {
                                 gender = "Nữ";
+                            }
+                            let status;
+                            if (item.ttptd_id == 1) {
+                                status = "Online";
+                            } else if (item.tinhtrangphieutuyendung.ttptd_id == 1) {
+                                status = "Online";
+                            } else {
+                                status = "Offline";
                             }
                             count++;
                             var tr = document.createElement('tr');
@@ -140,7 +149,7 @@
                                 "<td>" + gender + "</td>" +
                                 "<td>" + ArrCv[parseInt(item.ptd_chucvu) - 1] + "</td>" +
                                 "<td>" + item.ptd_email + "</td>" +
-                                "<td>" + item.tinhtrangphieutuyendung.ttptd_ten + "</td>" +
+                                "<td>" + status + "</td>" +
                                 "<td  onclick=" + "myMeo(event)" + "><button" +
                                 " id=" + "" + item.ptd_id + "" +
                                 " class=" + '"btn btn-success"' + "" + ">" + "Accept" + "</button></td>";

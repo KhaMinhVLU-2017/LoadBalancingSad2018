@@ -17,5 +17,6 @@
     <property name="tt_id" />
     <property name="loai" />
     <property name="nv_email" />
+    <property name="nv_sdt" />
   </class>
 </hibernate-mapping>

@@ -5,6 +5,8 @@
     <id name="ttptd_id" column="ttptd_id" type="int">
       <generator class="native" />
     </id>
-    <property name="ttptd_ten" />
+    <property name="ttptd_ten" type="long"/>
+  
+
   </class>
 </hibernate-mapping>

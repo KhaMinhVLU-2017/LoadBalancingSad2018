@@ -4,11 +4,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using API_Recruitment_Nhibernate.Models;
 using NHibernate;
 
 namespace API_Recruitment_Nhibernate.Controllers
 {
+    [EnableCors(origins: "http://localhost:53973,http://localhost:53689", headers: "*", methods: "*")]
     public class nhanviensController : ApiController
     {
         // GET: api/nhanviens

@@ -14,7 +14,7 @@ using API_Candidate.Models;
 
 namespace API_Candidate.Controllers7
 {
-    [EnableCors(origins: "http://localhost:53973,http://localhost:53689", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:53973,http://localhost:53689,http://localhost:56707", headers: "*", methods: "*")]
     public class chucvusController : ApiController
     { 
         private SAD2018Entities db = new SAD2018Entities();

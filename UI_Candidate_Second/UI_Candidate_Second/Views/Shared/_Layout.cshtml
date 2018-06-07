@@ -38,5 +38,115 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <div id="foot_meo" class="container">
+    </div>
+    <script type="text/javascript">
+        /*
+         * Position
+         */
+        $("#txt_api").click(function () {
+            getRoles();
+        })
+
+        /*
+         * function get Roles
+         */
+        function getRoles() {
+            var txt_role = document.getElementById('txt_role');
+            let url = txt_api.options[txt_api.selectedIndex].value;
+            let urlsub = url.slice(0, 23);
+            console.log("Your Connect is: "+urlsub);
+            while (txt_role.firstChild) {
+                txt_role.removeChild(txt_role.firstChild);
+            }
+            $.getJSON(urlsub+"api/chucvus")////
+                .done(function (data) {
+                    // On success, 'data' contains a list of products.
+
+                    $.each(data, function (key, item) {
+                        // Add a list item for the product.
+                        //console.log(item);
+                        var ops = document.createElement('option');
+                        ops.setAttribute("value", item.cvu_id);
+                        ops.innerText = item.cvu_ten;
+                        txt_role.appendChild(ops);
+                    });
+                });
+
+        }
+        /*
+         * Submit
+         */
+        $("#btn_send").click(function () {
+            var txt_api = document.getElementById('txt_api');
+
+            var url = txt_api.options[txt_api.selectedIndex].value;
+            var name = document.getElementById('txt_name').value;
+            var txt_bir = document.getElementById('txt_bir').value;
+            var txt_number = document.getElementById('txt_number').value;
+            var txt_email = document.getElementById('txt_email').value;
+            var txt_gender = document.getElementById('txt_gender');
+            var gender = txt_gender.options[txt_gender.selectedIndex].value;
+            var today = new Date();
+            var mm = today.getMonth() + 1;
+            console.log(mm);
+            var dd = today.getDay();
+            console.log(dd);
+            var yyyy = today.getFullYear();
+            var ngaydang = mm + "/" + dd + "/" + yyyy;
+
+            var gioitinh;
+            if (gender == 1) {
+                gioitinh = true;
+            } else {
+                gioitinh = false;
+            }
+            var txt_role = document.getElementById('txt_role');
+            var role = txt_role.options[txt_role.selectedIndex].value;
+            var txt_status = document.getElementById('txt_status').value;
+            var ttphieu = { ttptd_id: txt_status, ttptd_ten: "Online" };
+            var model = {
+                ptd_ten: name, ptd_ngaysinh: txt_bir, ptd_sdt: txt_number, ptd_email: txt_email, ptd_gioitinh: gioitinh, ptd_chucvu: role,
+                ptd_ngaydangphieu: ngaydang, tinhtrangphieutuyendung: ttphieu,
+            };
+            //console.log(model);
+
+            $.ajax({
+                cache: false,
+                url: url,
+                type: 'POST',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(model),
+                success: function (response, status) {
+                    if (status == "success") {
+                        var p = document.createElement('p');
+                        p.innerText = "Đăng ký phiếu tuyển dụng thành công";
+                        p.style.color = 'purple';
+                        p.style.fontSize = '50px';
+                        p.style.fontWeight = 'bold';
+                        p.style.textAlign = 'center';
+                        document.getElementById('foot_meo').appendChild(p);
+                    }
+                },
+
+                error: function (jqXhr, textStatus, errorThrown) {
+
+                    if (textStatus != "success") {
+                        var p = document.createElement('p');
+                        p.innerText = "Đăng ký phiếu tuyển thất bại";
+                        p.style.color = 'red';
+                        p.style.fontSize = '80px';
+                        p.style.textAlign = 'center';
+                        document.getElementById('foot_meo').appendChild(p);
+                    }
+                    console.log(jqXhr.responseText);
+                    //alert(textStatus + ": " + errorThrown + ": " + jqXhr.responseText + "  " + jqXhr.status);
+                },
+                complete: function (jqXhr) {
+                    console.log("Post Complete");
+                },
+            })
+        })
+    </script>
 </body>
 </html>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace UI_Candidate_Second.Controllers
+namespace UI_Recruitment_Second.Controllers
 {
     public class HomeController : Controller
     {

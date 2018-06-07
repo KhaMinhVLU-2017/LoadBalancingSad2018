@@ -100,7 +100,14 @@
     //Get List Data
     function getListCan() {
         var url = txt_url.options[txt_url.selectedIndex].value;//url enity
-        $.getJSON("http://localhost:54250/api/chucvus")
+        let IndexPosOp = txt_url.selectedIndex;//help Choose Hibernate || ENtity
+        let urlSub = "";
+        if (IndexPosOp == 0) {
+            urlSub = "http://localhost:54250/api/chucvus";// Entity
+        } else if (IndexPosOp == 1) {
+            urlSub = "http://localhost:65424/api/chucvus";//NhiberNate
+        }
+        $.getJSON(urlSub)
             .done(function (data) {
                 // On success, 'data' contains a list of products.
 
@@ -124,7 +131,6 @@
 
                         $.each(data, function (key, item) {
                             // Add a list item http://localhost:54250/api/chucvus/for the product.
-                            console.log(item);
                             var gender;
                             if (item.ptd_gioitinh) {
                                 gender = "Nam";

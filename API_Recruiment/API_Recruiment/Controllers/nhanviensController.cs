@@ -14,7 +14,7 @@ using System.Web.Http.Cors;
 
 namespace API_Recruiment.Controllers
 {
-    [EnableCors(origins: "http://localhost:53973,http://localhost:53689", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:53973,http://localhost:53689,http://localhost:57943", headers: "*", methods: "*")]
     public class nhanviensController : ApiController
     {
         private SAD2018Entities db = new SAD2018Entities();

@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "ListStaff";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <h1 style="text-align:center;">Danh sách nhân viên Second</h1>
+</div>
+<div class="col-md-12 form-group">
+    <div class="col-md-3">
+        <select class="form-control" id="txt_url_staff">
+            <option value="http://localhost:59323/api/nhanviens">EntityFrameWork</option>
+            <option value="http://localhost:54745/api/nhanviens">Hibernate</option>
+        </select>
+    </div>
+    <div class="col-md-1">
+        <button id="btn_send_staff" class="btn btn-success">Connect</button>
+    </div>
+    @*<div class="col-md-1">
+            <button id="btn_clear_staff" class="btn btn-success">Clear</button>
+        </div>*@
+</div>
+
+<div class="col-md-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Giới tính</th>
+                <th>Chức vụ</th>
+                <th>Ngày Sinh</th>
+                <th>SĐT</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="t_body_staff"></tbody>
+    </table>
+</div>
+
+
+
+<script type="text/javascript">
+    /*
+      * AJax Save Nhan vien
+      */
+
+    /*
+     * List Staff
+     */
+
+    var t_body_staff = document.getElementById('t_body_staff');
+    let count = 0;
+    var txt_url_staff = document.getElementById('txt_url_staff');
+    var countStaff = t_body_staff.getElementsByTagName('tr');
+    $("#btn_send_staff").click(function () {
+        getListStaff();
+    });
+    $("#btn_clear_staff").click(function () {
+        while (t_body_staff.firstChild) {
+            t_body_staff.removeChild(t_body_staff.firstChild);
+        }
+        count = 0;
+    });
+
+    //Get List Staff
+    function getListStaff() {
+        var url = txt_url_staff.options[txt_url_staff.selectedIndex].value;//url enity
+        let IndexPosOp = txt_url_staff.selectedIndex;//help Choose Hibernate || ENtity
+        let urlSub = "";
+        if (IndexPosOp == 0) {
+            urlSub = "http://localhost:54250/api/chucvus";// Entity
+        } else if (IndexPosOp == 1) {
+            urlSub = "http://localhost:65424/api/chucvus";//NhiberNate
+        }
+        // Send an AJAX request
+        var Cv_arr = {};
+        /*delete node current
+         */
+        while (t_body_staff.firstChild) {
+            t_body_staff.removeChild(t_body_staff.firstChild);
+        }
+        count = 0;
+        $.getJSON(urlSub)
+            .done(function (data) {
+
+                $.each(data, function (key, item) {
+                    // Add a list item for the product.
+                    Cv_arr[key] = item.cvu_ten;
+                });
+                $.getJSON(url)
+                    .done(function (data) {
+                        // On success, 'data' contains a list of products.
+
+                        $.each(data, function (key, item) {
+                            // Add a list item for the product.
+                            var gender;
+                            if (item.nv_gioitinh) {
+                                gender = "Nam";
+                            } else {
+                                gender = "Nữ";
+                            }
+                            count++;
+                            var tr = document.createElement('tr');
+                            tr.innerHTML =
+                                "<td>" + count + "</td>" +
+                                "<td>" + item.nv_ten + "</td>" +
+                                "<td>" + gender + "</td>" +
+                                "<td>" + Cv_arr[parseInt(item.cvu_id) - 1] + "</td>" +
+                                "<td>" + item.nv_ngaysinh + "</td>" +
+                                "<td>" + item.nv_sdt + "</td>" +
+                                "<td>" + item.nv_email + "</td>";
+                            t_body_staff.appendChild(tr);
+                        });
+                    });
+            });
+    }
+</script>

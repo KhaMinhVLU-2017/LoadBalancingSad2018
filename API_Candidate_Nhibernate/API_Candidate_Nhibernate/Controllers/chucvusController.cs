@@ -10,7 +10,7 @@ using NHibernate;
 
 namespace API_Candidate_Nhibernate.Controllers
 {
-    [EnableCors(origins: "http://localhost:53973,http://localhost:53689,http://localhost:56707", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:53973,http://localhost:53689,http://localhost:56707,http://localhost:57943", headers: "*", methods: "*")]
     public class chucvusController : ApiController
     {
         // GET: api/chucvu 

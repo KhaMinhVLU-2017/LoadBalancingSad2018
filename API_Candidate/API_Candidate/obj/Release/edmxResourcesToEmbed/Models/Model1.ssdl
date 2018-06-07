@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SAD2018Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="chucvu">
+    <Key>
+      <PropertyRef Name="cvu_id" />
+    </Key>
+    <Property Name="cvu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cvu_ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="ct_ten" />
+    </Key>
+    <Property Name="ct_ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ct_diachi" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hopdonglaodong">
+    <Key>
+      <PropertyRef Name="hdld_id" />
+    </Key>
+    <Property Name="hdld_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nv_id" Type="int" Nullable="false" />
+    <Property Name="hdld_loai" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="hdld_ngaybatdau" Type="date" Nullable="false" />
+    <Property Name="hdld_ngayketthuc" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="loai">
+    <Key>
+      <PropertyRef Name="loai_id" />
+    </Key>
+    <Property Name="loai_id" Type="bit" Nullable="false" />
+    <Property Name="loai_ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="luong">
+    <Key>
+      <PropertyRef Name="lg_bacluong" />
+    </Key>
+    <Property Name="lg_bacluong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lg_luongcoban" Type="int" Nullable="false" />
+    <Property Name="lg_hesoluong" Type="int" Nullable="false" />
+    <Property Name="lg_hesophucap" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="nhanvien">
+    <Key>
+      <PropertyRef Name="nv_id" />
+    </Key>
+    <Property Name="nv_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nv_ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="nv_ngaysinh" Type="date" />
+    <Property Name="nv_diachi" Type="nvarchar" MaxLength="100" />
+    <Property Name="nv_sdt" Type="nchar" MaxLength="11" />
+    <Property Name="nv_gioitinh" Type="bit" />
+    <Property Name="pb_id" Type="int" />
+    <Property Name="cvu_id" Type="int" />
+    <Property Name="tdhv_id" Type="int" />
+    <Property Name="lg_bacluong" Type="int" />
+    <Property Name="nv_tinhtrang" Type="nchar" MaxLength="10" />
+    <Property Name="tt_id" Type="int" />
+    <Property Name="loai" Type="bit" />
+    <Property Name="nv_email" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="phieutuyendung">
+    <Key>
+      <PropertyRef Name="ptd_id" />
+    </Key>
+    <Property Name="ptd_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ptd_ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ptd_ngaysinh" Type="date" Nullable="false" />
+    <Property Name="ptd_sdt" Type="nchar" MaxLength="11" />
+    <Property Name="ptd_gioitinh" Type="bit" Nullable="false" />
+    <Property Name="ptd_chucvu" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ptd_email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ttptd_id" Type="int" Nullable="false" />
+    <Property Name="ptd_ngaydangphieu" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="phongban">
+    <Key>
+      <PropertyRef Name="pb_id" />
+    </Key>
+    <Property Name="pb_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pb_ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tinhtrang">
+    <Key>
+      <PropertyRef Name="tt_id" />
+    </Key>
+    <Property Name="tt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tt_ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tinhtrangdottuyendung">
+    <Key>
+      <PropertyRef Name="tttd_id" />
+    </Key>
+    <Property Name="tttd_id" Type="int" Nullable="false" />
+    <Property Name="tttd_ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tinhtrangphieutuyendung">
+    <Key>
+      <PropertyRef Name="ttptd_id" />
+    </Key>
+    <Property Name="ttptd_id" Type="int" Nullable="false" />
+    <Property Name="ttptd_ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="trinhdohocvan">
+    <Key>
+      <PropertyRef Name="tdhv_id" />
+    </Key>
+    <Property Name="tdhv_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tdhv_ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tdhv_chuyennganh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tuyendung">
+    <Key>
+      <PropertyRef Name="td_id" />
+    </Key>
+    <Property Name="td_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="td_ten" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="td_noidung" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="td_ngaybatdau" Type="date" Nullable="false" />
+    <Property Name="td_ngayketthuc" Type="date" Nullable="false" />
+    <Property Name="tttd_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_hopdonglaodong_nhanvien">
+    <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="1" />
+    <End Role="hopdonglaodong" Type="Self.hopdonglaodong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nhanvien">
+        <PropertyRef Name="nv_id" />
+      </Principal>
+      <Dependent Role="hopdonglaodong">
+        <PropertyRef Name="nv_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nhanvien_chucvu">
+    <End Role="chucvu" Type="Self.chucvu" Multiplicity="0..1" />
+    <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="chucvu">
+        <PropertyRef Name="cvu_id" />
+      </Principal>
+      <Dependent Role="nhanvien">
+        <PropertyRef Name="cvu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nhanvien_loai">
+    <End Role="loai" Type="Self.loai" Multiplicity="0..1" />
+    <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="loai">
+        <PropertyRef Name="loai_id" />
+      </Principal>
+      <Dependent Role="nhanvien">
+        <PropertyRef Name="loai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nhanvien_luong">
+    <End Role="luong" Type="Self.luong" Multiplicity="0..1" />
+    <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="luong">
+        <PropertyRef Name="lg_bacluong" />
+      </Principal>
+      <Dependent Role="nhanvien">
+        <PropertyRef Name="lg_bacluong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nhanvien_phongban">
+    <End Role="phongban" Type="Self.phongban" Multiplicity="0..1" />
+    <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="phongban">
+        <PropertyRef Name="pb_id" />
+      </Principal>
+      <Dependent Role="nhanvien">
+        <PropertyRef Name="pb_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nhanvien_tinhtrang">
+    <End Role="tinhtrang" Type="Self.tinhtrang" Multiplicity="0..1" />
+    <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tinhtrang">
+        <PropertyRef Name="tt_id" />
+      </Principal>
+      <Dependent Role="nhanvien">
+        <PropertyRef Name="tt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nhanvien_trinhdohocvan">
+    <End Role="trinhdohocvan" Type="Self.trinhdohocvan" Multiplicity="0..1" />
+    <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trinhdohocvan">
+        <PropertyRef Name="tdhv_id" />
+      </Principal>
+      <Dependent Role="nhanvien">
+        <PropertyRef Name="tdhv_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_phieutuyendung_tinhtrangphieutuyendung">
+    <End Role="tinhtrangphieutuyendung" Type="Self.tinhtrangphieutuyendung" Multiplicity="1" />
+    <End Role="phieutuyendung" Type="Self.phieutuyendung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tinhtrangphieutuyendung">
+        <PropertyRef Name="ttptd_id" />
+      </Principal>
+      <Dependent Role="phieutuyendung">
+        <PropertyRef Name="ttptd_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tuyendung_tinhtrangdottuyendung">
+    <End Role="tinhtrangdottuyendung" Type="Self.tinhtrangdottuyendung" Multiplicity="1" />
+    <End Role="tuyendung" Type="Self.tuyendung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tinhtrangdottuyendung">
+        <PropertyRef Name="tttd_id" />
+      </Principal>
+      <Dependent Role="tuyendung">
+        <PropertyRef Name="tttd_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SAD2018ModelStoreContainer">
+    <EntitySet Name="chucvu" EntityType="Self.chucvu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hopdonglaodong" EntityType="Self.hopdonglaodong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="loai" EntityType="Self.loai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="luong" EntityType="Self.luong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="nhanvien" EntityType="Self.nhanvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="phieutuyendung" EntityType="Self.phieutuyendung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="phongban" EntityType="Self.phongban" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tinhtrang" EntityType="Self.tinhtrang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tinhtrangdottuyendung" EntityType="Self.tinhtrangdottuyendung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tinhtrangphieutuyendung" EntityType="Self.tinhtrangphieutuyendung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trinhdohocvan" EntityType="Self.trinhdohocvan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tuyendung" EntityType="Self.tuyendung" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_hopdonglaodong_nhanvien" Association="Self.FK_hopdonglaodong_nhanvien">
+      <End Role="nhanvien" EntitySet="nhanvien" />
+      <End Role="hopdonglaodong" EntitySet="hopdonglaodong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nhanvien_chucvu" Association="Self.FK_nhanvien_chucvu">
+      <End Role="chucvu" EntitySet="chucvu" />
+      <End Role="nhanvien" EntitySet="nhanvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nhanvien_loai" Association="Self.FK_nhanvien_loai">
+      <End Role="loai" EntitySet="loai" />
+      <End Role="nhanvien" EntitySet="nhanvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nhanvien_luong" Association="Self.FK_nhanvien_luong">
+      <End Role="luong" EntitySet="luong" />
+      <End Role="nhanvien" EntitySet="nhanvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nhanvien_phongban" Association="Self.FK_nhanvien_phongban">
+      <End Role="phongban" EntitySet="phongban" />
+      <End Role="nhanvien" EntitySet="nhanvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nhanvien_tinhtrang" Association="Self.FK_nhanvien_tinhtrang">
+      <End Role="tinhtrang" EntitySet="tinhtrang" />
+      <End Role="nhanvien" EntitySet="nhanvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nhanvien_trinhdohocvan" Association="Self.FK_nhanvien_trinhdohocvan">
+      <End Role="trinhdohocvan" EntitySet="trinhdohocvan" />
+      <End Role="nhanvien" EntitySet="nhanvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_phieutuyendung_tinhtrangphieutuyendung" Association="Self.FK_phieutuyendung_tinhtrangphieutuyendung">
+      <End Role="tinhtrangphieutuyendung" EntitySet="tinhtrangphieutuyendung" />
+      <End Role="phieutuyendung" EntitySet="phieutuyendung" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tuyendung_tinhtrangdottuyendung" Association="Self.FK_tuyendung_tinhtrangdottuyendung">
+      <End Role="tinhtrangdottuyendung" EntitySet="tinhtrangdottuyendung" />
+      <End Role="tuyendung" EntitySet="tuyendung" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

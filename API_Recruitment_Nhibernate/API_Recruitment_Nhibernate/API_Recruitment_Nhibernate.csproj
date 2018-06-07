@@ -210,6 +210,7 @@
     </Compile>
     <Compile Include="Models\nhanviens.cs" />
     <Compile Include="Models\NHibertnateSession.cs" />
+    <Compile Include="Models\phieutuyendung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +224,7 @@
     <Content Include="Global.asax" />
     <Content Include="Models\Nhibernate\hibernate.cfg.xml" />
     <Content Include="Models\Nhibernate\nhanviens.hbm.xml" />
+    <Content Include="Models\Nhibernate\phieutuyendung.hbm.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

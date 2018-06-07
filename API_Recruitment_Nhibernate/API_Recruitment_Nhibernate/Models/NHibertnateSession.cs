@@ -16,6 +16,8 @@ namespace API_Recruitment_Nhibernate.Models
             configuration.Configure(configurationPath);
             var nhanviensConfiguration = HttpContext.Current.Server.MapPath(@"~\Models\Nhibernate\nhanviens.hbm.xml");
             configuration.AddFile(nhanviensConfiguration);
+            var phieutuyenConfiguration = HttpContext.Current.Server.MapPath(@"~\Models\Nhibernate\phieutuyendung.hbm.xml");
+            configuration.AddFile(phieutuyenConfiguration);
             ISessionFactory sessionFactory = configuration.BuildSessionFactory();
             return sessionFactory.OpenSession();
         }

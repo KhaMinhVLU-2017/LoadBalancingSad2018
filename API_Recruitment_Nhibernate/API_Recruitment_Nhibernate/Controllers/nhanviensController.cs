@@ -48,6 +48,7 @@ namespace API_Recruitment_Nhibernate.Controllers
                 using (ITransaction transaction = session.BeginTransaction())
                 {
                     session.Save(staff);
+
                     session.Delete(meo);
                     transaction.Commit();
                     return Ok("{status:200,message: complete Save }");

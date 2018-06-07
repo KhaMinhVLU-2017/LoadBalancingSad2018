@@ -55,13 +55,20 @@
     function myMeo(event) {
         var ids = event.target.id;
         //var countBtn = event.target.nodeName;
+        let IndexPosOp = document.getElementById('txt_url').selectedIndex;//help Choose Hibernate || ENtity
+        let urlSub = "";
+        if (IndexPosOp == 0) {
+            urlSub = "http://localhost:54250/api/nhanviens";// Entity
+        } else if (IndexPosOp == 1) {
+            urlSub = "http://localhost:54745/api/nhanviens";//NhiberNate
+        }
         //console.log(countBtn);
         var model = {
             ptd_id: ids
         };
         $.ajax({
             cache: false,
-            url: "http://localhost:59323" + "/api/nhanviens",
+            url: urlSub,
             type: 'POST',
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(model),

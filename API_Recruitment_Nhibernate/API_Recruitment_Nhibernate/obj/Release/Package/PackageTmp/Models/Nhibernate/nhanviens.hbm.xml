@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="API_Recruitment_Nhibernate" namespace="API_Recruitment_Nhibernate.Models">
+  <class name="nhanviens" table="nhanvien" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="nv_id" column="nv_id" type="int">
+      <generator class="native" />
+    </id>
+    <property name="nv_ten" />
+    <property name="nv_ngaysinh" />
+    <property name="nv_diachi" />
+    <property name="nv_gioitinh" />
+    <property name="pb_id" />
+    <property name="cvu_id" />
+    <property name="tdhv_id" />
+    <property name="lg_bacluong" />
+    <property name="nv_tinhtrang" />
+    <property name="tt_id" />
+    <property name="loai" />
+    <property name="nv_email" />
+    <property name="nv_sdt" />
+  </class>
+</hibernate-mapping>

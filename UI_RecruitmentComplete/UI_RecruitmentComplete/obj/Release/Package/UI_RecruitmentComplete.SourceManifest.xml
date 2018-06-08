@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\Learning School\THe Thrid\HKII\Software Architecture Design\Finally\UI_RecruitmentComplete\UI_RecruitmentComplete\obj\Release\Package\PackageTmp" />
+  <setAcl path="D:\Learning School\THe Thrid\HKII\Software Architecture Design\Finally\UI_RecruitmentComplete\UI_RecruitmentComplete\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\Learning School\THe Thrid\HKII\Software Architecture Design\Finally\UI_RecruitmentComplete\UI_RecruitmentComplete\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

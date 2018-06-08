@@ -1,0 +1,169 @@
+﻿@{
+    ViewBag.Title = "ListCandidate Second";
+}
+
+<div class="col-md-12">
+    <h1 style="text-align:center;">Danh sách tuyển dụng Second</h1>
+</div>
+<div class="col-md-12 form-group">
+    <div class="col-md-3">
+        <select class="form-control" id="txt_url">
+            <option value="http://localhost:54250/api/phieutuyendungs">EntityFrameWork</option>
+            <option value="http://localhost:65424/api/phieutuyendung">Hibernate</option>
+        </select>
+    </div>
+    <div class="col-md-1">
+        <button id="btn_send" class="btn btn-success">Connect</button>
+    </div>
+    @*<div class="col-md-1">
+            <button id="btn_clear" class="btn btn-success">Clear</button>
+        </div>*@
+</div>
+
+<div class="col-md-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Ngày Sinh</th>
+                <th>SĐT</th>
+                <th>Giới tính</th>
+                <th>Chức vụ</th>
+                <th>Email</th>
+                <th>Tình trạng</th>
+                <th>Xác Thực</th>
+            </tr>
+        </thead>
+        <tbody id="t_body"></tbody>
+    </table>
+</div>
+<div class="col-md-12">
+    <h1 id="tt_complete"></h1>
+</div>
+
+<script type="text/javascript">
+    /*
+     * List Candidate
+     */
+    var t_body = document.getElementById('t_body');
+    var counttr = t_body.getElementsByTagName('tr');
+
+    let count = 0;
+    let ArrCv = {};
+    var tt_complete = document.getElementById('tt_complete');
+    function myMeo(event) {
+        var ids = event.target.id;
+        //var countBtn = event.target.nodeName;
+        //console.log(countBtn);
+        var model = {
+            ptd_id: ids
+        };
+        $.ajax({
+            cache: false,
+            url: "http://localhost:59323" + "/api/nhanviens",
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(model),
+            success: function (response, status) {
+                if (status == "success") {
+                    location.reload();
+                    tt_complete.innerText = "Accept Complete " + ids;
+                    tt_complete.style.color = "#c35757";
+                }
+
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                console.log(jqXhr.responseText);
+                alert("Error for connect API. Please Check API");
+                //alert(textStatus + ": " + errorThrown + ": " + jqXhr.responseText + "  " + jqXhr.status);
+            },
+            complete: function (jqXhr) {
+                console.log("Post Complete");
+            },
+        })
+    }
+    $("#btn_send").click(function () {
+        // Send an AJAX request chuc vu
+        getListCan();
+    });
+    //$("#btn_clear").click(function () {
+    //    while (t_body.firstChild) {
+    //        t_body.removeChild(t_body.firstChild);
+    //    }
+    //    count = 0;
+    //})
+    $(document).ready(function () {
+        getListCan();
+    });
+    var txt_url = document.getElementById('txt_url');
+
+    //Get List Data
+    function getListCan() {
+        var url = txt_url.options[txt_url.selectedIndex].value;//url enity
+        let IndexPosOp = txt_url.selectedIndex;//help Choose Hibernate || ENtity
+        let urlSub = "";
+        if (IndexPosOp == 0) {
+            urlSub = "http://localhost:54250/api/chucvus";// Entity
+        } else if (IndexPosOp == 1) {
+            urlSub = "http://localhost:65424/api/chucvus";//NhiberNate
+        }
+        $.getJSON(urlSub)
+            .done(function (data) {
+                // On success, 'data' contains a list of products.
+
+                $.each(data, function (key, item) {
+                    // Add a list item  the product.
+                    ArrCv[key] = item.cvu_ten;
+                    //console.log(ArrCv[key]);
+                });
+                while (t_body.firstChild) {
+                    t_body.removeChild(t_body.firstChild);
+                }
+                count = 0;
+                /*
+                 * Phieu tuyen dung
+                 */
+                //console.log(ArrCv);
+
+                $.getJSON(url)
+                    .done(function (data) {
+                        // On success, 'data' contains a list of products.
+
+                        $.each(data, function (key, item) {
+                            // Add a list item http://localhost:54250/api/chucvus/for the product.
+                            var gender;
+                            if (item.ptd_gioitinh) {
+                                gender = "Nam";
+                            } else {
+                                gender = "Nữ";
+                            }
+                            let status;
+                            if (item.ttptd_id == 1) {
+                                status = "Online";
+                            } else if (item.tinhtrangphieutuyendung.ttptd_id == 1) {
+                                status = "Online";
+                            } else {
+                                status = "Offline";
+                            }
+                            count++;
+                            var tr = document.createElement('tr');
+                            tr.innerHTML =
+                                "<td>" + count + "</td>" +
+                                "<td>" + item.ptd_ten + "</td>" +
+                                "<td>" + item.ptd_ngaysinh + "</td>" +
+                                "<td>" + item.ptd_sdt + "</td>" +
+                                "<td>" + gender + "</td>" +
+                                "<td>" + ArrCv[parseInt(item.ptd_chucvu) - 1] + "</td>" +
+                                "<td>" + item.ptd_email + "</td>" +
+                                "<td>" + status + "</td>" +
+                                "<td  onclick=" + "myMeo(event)" + "><button" +
+                                " id=" + "" + item.ptd_id + "" +
+                                " class=" + '"btn btn-success"' + "" + ">" + "Accept" + "</button></td>";
+                            t_body.appendChild(tr);
+                        });
+                    });
+            });
+    }
+</script>
+

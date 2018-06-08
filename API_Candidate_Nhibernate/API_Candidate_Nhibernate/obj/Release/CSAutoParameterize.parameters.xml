@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="API_Candidate_NhibernateContext-Web.config Connection String" description="API_Candidate_NhibernateContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=API_Candidate_NhibernateContext-20180605140930; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|API_Candidate_NhibernateContext-20180605140930.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Learning\ School\\THe\ Thrid\\HKII\\Software\ Architecture\ Design\\Finally\\API_Candidate_Nhibernate\\API_Candidate_Nhibernate\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='API_Candidate_NhibernateContext']/@connectionString" />
+  </parameter>
+</parameters>

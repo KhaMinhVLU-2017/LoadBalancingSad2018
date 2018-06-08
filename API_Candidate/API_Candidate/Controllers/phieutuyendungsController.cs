@@ -37,10 +37,7 @@ namespace API_Candidate.Controllers
                     ptd_ngaysinh = item.ptd_ngaysinh,
                     ptd_chucvu = item.ptd_chucvu,
                     ptd_ngaydangphieu = item.ptd_ngaydangphieu,
-                    tinhtrangphieutuyendung = new tinhtrangphieutuyendung {
-                        ttptd_id=item.tinhtrangphieutuyendung.ttptd_id,
-                        ttptd_ten= item.tinhtrangphieutuyendung.ttptd_ten
-                    }
+                    ttptd_id = 1,
                 });
             }
             return meo;

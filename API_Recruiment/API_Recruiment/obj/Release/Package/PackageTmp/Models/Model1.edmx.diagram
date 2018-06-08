@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ad506b5b1904c8bbb4a12a6d0915ee3" Name="Diagram1">
+        <EntityTypeShape EntityType="SAD2018Model.chucvu" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.contact" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.hopdonglaodong" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.loai" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.luong" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.nhanvien" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.phieutuyendung" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.phongban" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.tinhtrang" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.tinhtrangdottuyendung" Width="1.5" PointX="5.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.tinhtrangphieutuyendung" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.trinhdohocvan" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SAD2018Model.tuyendung" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="SAD2018Model.FK_nhanvien_chucvu" ManuallyRouted="false" />
+        <AssociationConnector Association="SAD2018Model.FK_hopdonglaodong_nhanvien" ManuallyRouted="false" />
+        <AssociationConnector Association="SAD2018Model.FK_nhanvien_loai" ManuallyRouted="false" />
+        <AssociationConnector Association="SAD2018Model.FK_nhanvien_luong" ManuallyRouted="false" />
+        <AssociationConnector Association="SAD2018Model.FK_nhanvien_phongban" ManuallyRouted="false" />
+        <AssociationConnector Association="SAD2018Model.FK_nhanvien_tinhtrang" ManuallyRouted="false" />
+        <AssociationConnector Association="SAD2018Model.FK_nhanvien_trinhdohocvan" ManuallyRouted="false" />
+        <AssociationConnector Association="SAD2018Model.FK_phieutuyendung_tinhtrangphieutuyendung" ManuallyRouted="false" />
+        <AssociationConnector Association="SAD2018Model.FK_tuyendung_tinhtrangdottuyendung" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

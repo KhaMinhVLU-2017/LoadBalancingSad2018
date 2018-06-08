@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/ApiRecruitment" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Learning\ School\\THe\ Thrid\\HKII\\Software\ Architecture\ Design\\Finally\\API_Recruiment\\API_Recruiment\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Learning\ School\\THe\ Thrid\\HKII\\Software\ Architecture\ Design\\Finally\\API_Recruiment\\API_Recruiment\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="SAD2018Entities-Web.config Connection String" description="" value="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=JUDASFATE\JUDASFATE;Initial Catalog=SAD2018;User ID=sa;Password=123456&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Learning\ School\\THe\ Thrid\\HKII\\Software\ Architecture\ Design\\Finally\\API_Recruiment\\API_Recruiment\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SAD2018Entities']/@connectionString" />
+  </parameter>
+</parameters>
